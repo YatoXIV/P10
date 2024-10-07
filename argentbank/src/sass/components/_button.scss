@@ -1,0 +1,19 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// Bouton de connexion
+.sign-in-button {
+  @include button-styles($primary-color); // Utilisation d'un mixin pour les styles de bouton
+  margin-top: 1rem;
+}
+
+// Boutons "Enregistrer" et "Annuler" pour l'édition
+.save-edit-button,
+.cancel-edit-button {
+  @include button-styles($primary-color); // Utilisation du même mixin pour les styles de bouton
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}

@@ -1,0 +1,41 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.sign-in-content {
+  box-sizing: border-box;
+  background-color: white;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 2rem;
+  border-radius: $border-radius; // Utilisation de la nouvelle variable
+
+  .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 1rem;
+    cursor: pointer;
+
+    label {
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    input {
+      padding: 5px;
+      font-size: $font-size-large; // Utilisation de la nouvelle variable
+      cursor: pointer;
+    }
+  }
+
+  .input-remember {
+    display: flex;
+    cursor: pointer;
+
+    label {
+      margin-left: 0.25rem;
+      cursor: pointer;
+    }
+  }
+}

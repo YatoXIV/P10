@@ -1,0 +1,61 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/keyframes" as *;
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $loader-bg-color; // Utilisation de la nouvelle variable
+  z-index: 1000;
+  transition: opacity 0.5s ease;
+}
+
+.loader {
+  border: $loader-border-size solid $dark-background-color; // Utilisation de la nouvelle variable
+  border-top: $loader-border-size solid $loader-border-color; // Utilisation de la nouvelle variable
+  border-radius: 50%;
+  width: $loader-size; // Utilisation de la nouvelle variable
+  height: $loader-size; // Utilisation de la nouvelle variable
+  position: relative;
+  animation: spin 2s linear infinite;
+}
+
+.loader-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $loader-text-color; // Utilisation de la nouvelle variable
+  font-size: $loader-text-size; // Utilisation de la nouvelle variable
+}
+
+.notification {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $notification-bg-color; // Utilisation de la nouvelle variable
+  color: $notification-text-color; // Utilisation de la nouvelle variable
+  padding: $notification-padding; // Utilisation de la nouvelle variable
+  border-radius: $notification-border-radius; // Utilisation de la nouvelle variable
+  box-shadow: $notification-box-shadow; // Utilisation de la nouvelle variable
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .spinner {
+    border: 4px solid $notification-text-color; // Utilisation de la nouvelle variable
+    width: $notification-spinner-size; // Utilisation de la nouvelle variable
+    height: $notification-spinner-size; // Utilisation de la nouvelle variable
+    border-radius: 50%;
+    border-left-color: $notification-spinner-border-color; // Utilisation de la nouvelle variable
+    animation: spin 1s ease infinite;
+    margin-left: 10px;
+  }
+}
